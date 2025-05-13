@@ -4,9 +4,9 @@ CourseScheduler-1
 
 CourseScheduler-2
 – Walks through the Swing GUI implementation, highlighting the Event Dispatch Thread for safe UI updates and use of JComboBox and JTable components.
-– Describes the DAO pattern for abstracting database access via JDBC and how PreparedStatement prevents SQL injection during CRUD operations.
+– Describes the data access object pattern for abstracting database access via JDBC and how PreparedStatement prevents SQL injection during CRUD operations.
 
-homework1_lights_out_gui.py (Tile Puzzle)
+ Tile Puzzle
 – Implements the “Lights Out” puzzle using Tkinter’s grid geometry manager and event bindings to toggle tile states on click.
 – Encapsulates board logic in functions for state management and win-detection, illustrating separation of UI and game rules.
 
