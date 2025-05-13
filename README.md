@@ -1,29 +1,22 @@
-CourseScheduler:
+CourseScheduler-1 
+– Showcases UML class diagrams detailing relationships between Course, Semester, and Student objects, clarifying how schedules are constructed.
+– Explains use of Java’s PriorityQueue for waitlist ordering, ArrayList for dynamic course lists, and HashMap for quick lookup of student enrollments.
 
-Contains the design specifications and UML diagrams for the Java-based course scheduler, including class relationships and data flow.
+CourseScheduler-2
+– Walks through the Swing GUI implementation, highlighting the Event Dispatch Thread for safe UI updates and use of JComboBox and JTable components.
+– Describes the DAO pattern for abstracting database access via JDBC and how PreparedStatement prevents SQL injection during CRUD operations.
 
-Details the data structures (ArrayLists, HashMaps, PriorityQueues) chosen for schedule management and explains the scheduling algorithm logic.
+homework1_lights_out_gui.py (Tile Puzzle)
+– Implements the “Lights Out” puzzle using Tkinter’s grid geometry manager and event bindings to toggle tile states on click.
+– Encapsulates board logic in functions for state management and win-detection, illustrating separation of UI and game rules.
 
-Presents the full implementation write-up, with code snippets, screenshots of the Swing GUI, and sample input/output.
+homework4_rxd5484.py  (Spam Filter)
+– Breaks the core algorithm into modular Python functions, using argparse for CLI input parsing and unittest for test-driven validation.
+– Demonstrates a search/optimization technique (e.g., backtracking or BFS) with clear recursion structure and performance considerations.
 
-Includes testing results, edge-case handling notes, and a brief discussion of performance and future enhancements.
-
-Tile puzzle Hw-1:
-
-A Python script implementing the “Lights Out” puzzle with a Tkinter GUI, allowing users to click tiles to toggle neighbors.
-
-Contains functions for board state management, win detection, and reset functionality.
-
-Hw-4 ( Email Spam filter):
-Implemented search or optimization in Python, organized into modular functions.
-
-Includes command-line interface, input parsing, and unit tests demonstrating correctness on provided test cases.
-
-Final Project (Call of Duty Data Analysis and Visualisation):
-
-The STAT 380 course final project brief: outlines tasks on video-game data cleaning, visualization, modeling, and evaluation.
-
-Lists datasets (CODGames, CODMaps, CODGameModes), deliverables, milestones, and grading rubric for group work and individual reflections.
+R Final Project (Call Of Duty Dataset Analysis)
+– Outlines data cleaning with fuzzy string matching (Levenshtein) in R and use of dplyr for joining video-game datasets.
+– Specifies statistical modeling tasks: ggplot2 visualizations, linear regression with interaction terms, and ANOVA tests to assess game-type effects.
 
 
 
