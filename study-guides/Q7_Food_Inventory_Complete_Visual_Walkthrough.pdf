@@ -1,0 +1,472 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 8 /Kids [7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Length 4038 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F2 20 Tf 1 0 0 1 44 736.00 Tm (Q7 - FOOD INVENTORY) Tj ET
+0 g BT /F1 11 Tf 1 0 0 1 44 708.00 Tm (Augmented Red-Black Tree - Complete Visual Walkthrough) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 686.00 Tm (Lecture 5 / Homework Q7. A step-by-step guide with pseudocode, tree figures, calculations and) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 673.00 Tm (worst-case running times.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 644.00 Tm (1. Data structure) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 619.00 Tm (Use an augmented Red-Black Tree \(RB tree\), with one node per reported date. The key of every node is) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 606.00 Tm (its date d.) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 588.00 Tm (FIELD                 PURPOSE) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 576.40 Tm (date                  The date used as the search key) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 564.80 Tm (produced              Food produced on this date) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 553.20 Tm (eaten                 Food eaten on this date) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 541.60 Tm (tossed                Food tossed on this date) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 530.00 Tm (subtreeProduced       Total produced in the entire subtree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 518.40 Tm (subtreeEaten          Total eaten in the entire subtree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 506.80 Tm (subtreeTossed         Total tossed in the entire subtree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 495.20 Tm (subtreeCount          Number of reported dates in the subtree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 483.60 Tm (left, right, p, color Normal RB-tree fields) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 465.00 Tm (For T.nil, all sums and counts are zero. The RB tree height is O\(log n\). Subtree totals make range) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 452.00 Tm (averages efficient without visiting each reported date.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 423.00 Tm (2. Example used throughout) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 398.00 Tm (Date     Produced      Eaten      Tossed) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 386.40 Tm (12823       50           30          10) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 374.80 Tm (12825       40           35           5) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 363.20 Tm (12826       50           30          10) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 344.60 Tm (Initially, only 12823 and 12825 are recorded. We first insert 12826 with produced=50, then add) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 331.60 Tm (eaten=30 and tossed=10 to that same date.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 302.60 Tm (3. Helper function: UPDATE\(z\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 277.60 Tm (UPDATE\(z\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 266.00 Tm (    if z == T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 254.40 Tm (        return) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 242.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 231.20 Tm (    z.subtreeCount = 1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 219.60 Tm (        + z.left.subtreeCount) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 208.00 Tm (        + z.right.subtreeCount) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 196.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 184.80 Tm (    z.subtreeProduced = z.produced) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 173.20 Tm (        + z.left.subtreeProduced) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 161.60 Tm (        + z.right.subtreeProduced) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 150.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 138.40 Tm (    z.subtreeEaten = z.eaten) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 126.80 Tm (        + z.left.subtreeEaten) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 115.20 Tm (        + z.right.subtreeEaten) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 103.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 92.00 Tm (    z.subtreeTossed = z.tossed) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 80.40 Tm (        + z.left.subtreeTossed) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 68.80 Tm (        + z.right.subtreeTossed) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 4035 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 742.00 Tm (UPDATE\(z\) recomputes information for one node using its own value plus previously stored values in) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 729.00 Tm (its two children. For example, subtreeProduced = own produced + left subtree produced + right) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 716.00 Tm (subtree produced.) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 698.00 Tm (Time: O\(1\). UPDATE does a fixed number of additions and does NOT traverse its children.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 669.00 Tm (4. UPDATE_FOOD_INVENTORY\(T, x, q, d\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 644.00 Tm (This is the full pseudocode. Reports for an existing date and type are added to the previous amount.) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 626.00 Tm (UPDATE_FOOD_INVENTORY\(T, x, q, d\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 614.40 Tm (    z = RB-SEARCH\(T, d\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 602.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 591.20 Tm (    if z != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 579.60 Tm (        if x == PRODUCED:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 568.00 Tm (            z.produced = z.produced + q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 556.40 Tm (        else if x == EATEN:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 544.80 Tm (            z.eaten = z.eaten + q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 533.20 Tm (        else:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 521.60 Tm (            z.tossed = z.tossed + q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 510.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 498.40 Tm (        v = z) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 486.80 Tm (        while v != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 475.20 Tm (            UPDATE\(v\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 463.60 Tm (            v = v.p) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 452.00 Tm (        return) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 440.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 428.80 Tm (    z = NEW-NODE\(\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 417.20 Tm (    z.date = d) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 405.60 Tm (    z.produced = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 394.00 Tm (    z.eaten = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 382.40 Tm (    z.tossed = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 370.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 359.20 Tm (    if x == PRODUCED:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 347.60 Tm (        z.produced = q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 336.00 Tm (    else if x == EATEN:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 324.40 Tm (        z.eaten = q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 312.80 Tm (    else:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 301.20 Tm (        z.tossed = q) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 289.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 278.00 Tm (    z.left = T.nil) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 266.40 Tm (    z.right = T.nil) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 254.80 Tm (    z.color = RED) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 243.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 231.60 Tm (    z.subtreeCount = 1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 220.00 Tm (    z.subtreeProduced = z.produced) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 208.40 Tm (    z.subtreeEaten = z.eaten) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 196.80 Tm (    z.subtreeTossed = z.tossed) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 185.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 173.60 Tm (    RB-BST-INSERT\(T, z\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 162.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 150.40 Tm (    v = z.p) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 138.80 Tm (    while v != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 127.20 Tm (        UPDATE\(v\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 115.60 Tm (        v = v.p) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 104.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 92.40 Tm (    RB-INSERT-FIXUP\(T, z\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 73.80 Tm (During RB-INSERT-FIXUP, when a rotation happens, call UPDATE on the two nodes whose subtrees) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 4022 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 742.00 Tm (changed: first the node that moves down, then the node that moves up.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 717.00 Tm (Step 1 - Tree before adding date 12826) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 696.00 Tm (                12823 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 684.40 Tm (                       \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 672.80 Tm (                     12825 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 661.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 649.60 Tm (Node        Psum     Esum     Tsum     Count) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 638.00 Tm (12823         90       65       15         2) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 626.40 Tm (12825         40       35        5         1) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 607.80 Tm (Why is 12823.subtreeProduced = 90? Its subtree contains both 12823 and 12825, so 50 + 40 = 90.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 582.80 Tm (Step 2 - Search for date 12826) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 561.80 Tm (UPDATE_FOOD_INVENTORY\(T, PRODUCED, 50, 12826\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 550.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 538.60 Tm (z = RB-SEARCH\(T, 12826\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 527.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 515.40 Tm (               12823 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 503.80 Tm (                       \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 492.20 Tm (                     12825 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 480.60 Tm (                            \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 469.00 Tm (                            T.nil) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 450.40 Tm (The date does not exist, so z = T.nil. We skip the existing-date branch and make a new node.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 425.40 Tm (Step 3 - Create and initialize the node) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 404.40 Tm (z = NEW-NODE\(\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 392.80 Tm (z.date = 12826) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 381.20 Tm (z.produced = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 369.60 Tm (z.eaten = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 358.00 Tm (z.tossed = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 346.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 334.80 Tm (if x == PRODUCED:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 323.20 Tm (    z.produced = 50) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 304.60 Tm (At first all three amounts are zero. Because x=PRODUCED and q=50, we change produced to 50. The new) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 291.60 Tm (node is NOT yet inside the tree.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 266.60 Tm (Step 4 - Initialize children, color and subtree values) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 245.60 Tm (z.left = T.nil) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 234.00 Tm (z.right = T.nil) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 222.40 Tm (z.color = RED) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 210.80 Tm (z.subtreeCount = 1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 199.20 Tm (z.subtreeProduced = z.produced) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 187.60 Tm (z.subtreeEaten = z.eaten) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 176.00 Tm (z.subtreeTossed = z.tossed) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 164.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 152.80 Tm (              +-------------------------+) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 141.20 Tm (              |  12826 \(RED\)            |) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 129.60 Tm (              |  own P=50 E=0 T=0      |) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 118.00 Tm (              |  subtree P=50 E=0 T=0  |) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 106.40 Tm (              |  subtreeCount = 1       |) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 94.80 Tm (              +-------------------------+) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 83.20 Tm (                   /           \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 71.60 Tm (                 T.nil        T.nil) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 4162 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 742.00 Tm (Its subtree contains exactly itself, hence subtreeCount = 1 and each subtree sum equals its own) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 729.00 Tm (daily value.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 704.00 Tm (Step 5 - BST insert) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 683.00 Tm (RB-BST-INSERT\(T, z\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 671.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 659.80 Tm (                12823 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 648.20 Tm (                       \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 636.60 Tm (                     12825 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 625.00 Tm (                             \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 613.40 Tm (                           12826 \(RED\) <- new node) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 594.80 Tm (12826 is greater than both existing keys, so it becomes the right child of 12825. Ancestor totals) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 581.80 Tm (are now stale until we run UPDATE.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 556.80 Tm (Step 6 - Recompute node 12825) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 535.80 Tm (v = z.p                      // v = 12825) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 524.20 Tm (while v != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 512.60 Tm (    UPDATE\(v\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 501.00 Tm (    v = v.p) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 489.40 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 477.80 Tm (UPDATE\(12825\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 466.20 Tm (  subtreeProduced = 40 + 50 = 90) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 454.60 Tm (  subtreeEaten    = 35 +  0 = 35) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 443.00 Tm (  subtreeTossed   =  5 +  0 =  5) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 431.40 Tm (  subtreeCount    =  1 +  1 =  2) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 419.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 408.20 Tm (                12823 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 396.60 Tm (                       \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 385.00 Tm (                  [12825] \(RED\) Psum=90, Count=2) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 373.40 Tm (                             \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 361.80 Tm (                           12826 \(RED\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 343.20 Tm (We update 12825 first because it is the direct parent of the new node. Then v = v.p moves to 12823.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 318.20 Tm (Step 7 - Recompute node 12823) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 297.20 Tm (UPDATE\(12823\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 285.60 Tm (  subtreeProduced = 50 + 90 = 140) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 274.00 Tm (  subtreeEaten    = 30 + 35 =  65) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 262.40 Tm (  subtreeTossed   = 10 +  5 =  15) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 250.80 Tm (  subtreeCount    =  1 +  2 =   3) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 239.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 227.60 Tm (                [12823] \(BLACK\)  Psum=140) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 216.00 Tm (                       \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 204.40 Tm (                     12825 \(RED\) Psum=90) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 192.80 Tm (                             \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 181.20 Tm (                           12826 \(RED\) Psum=50) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 162.60 Tm (The right subtree of 12823 now includes both 12825 and 12826. After 12823, v moves to T.nil and the) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 149.60 Tm (loop stops. Because a red-black tree has height O\(log n\), updating this ancestor path costs O\(log) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 136.60 Tm (n\).) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 111.60 Tm (Step 8 - Red-Black Tree insertion fixup) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 90.60 Tm (BEFORE:                             AFTER:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 79.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 67.40 Tm (   12823 \(BLACK\)                       12825 \(BLACK\)) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 4258 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 742.00 Tm (          \\                            /           \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 730.40 Tm (        12825 \(RED\)             12823 \(RED\)      12826 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 718.80 Tm (               \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 707.20 Tm (             12826 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 695.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 684.00 Tm (Fix: left-rotate at 12823, and recolor as shown.) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 665.40 Tm (The 12825 -> 12826 edge is RED-RED, so the tree violates the RB-tree rules. In this right-right) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 652.40 Tm (case, a left rotation at 12823 plus recoloring restores the properties.) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 634.40 Tm (After rotation, update the node that moved DOWN first:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 622.80 Tm (UPDATE\(12823\): P=50, E=30, T=10, Count=1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 611.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 599.60 Tm (Then update the node that moved UP:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 588.00 Tm (UPDATE\(12825\): P=140, E=65, T=15, Count=3) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 569.40 Tm (A rotation changes subtree membership, which is why both nodes must have their augmented information) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 556.40 Tm (recomputed.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 531.40 Tm (Step 9 - Existing date: add EATEN = 30) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 510.40 Tm (UPDATE_FOOD_INVENTORY\(T, EATEN, 30, 12826\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 498.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 487.20 Tm (z = RB-SEARCH\(T, 12826\)     // date exists) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 475.60 Tm (z.eaten = z.eaten + 30     // 0 + 30 = 30) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 464.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 452.40 Tm (v = z) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 440.80 Tm (while v != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 429.20 Tm (    UPDATE\(v\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 417.60 Tm (    v = v.p) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 406.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 394.40 Tm (                12825 \(BLACK\) Esub=95) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 382.80 Tm (                /              \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 371.20 Tm (       12823 \(RED\)          12826 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 359.60 Tm (       own E=30             own E=30) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 341.00 Tm (We update node 12826 and then its parent 12825. We do not create another node and do not need) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 328.00 Tm (insertion fixup.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 303.00 Tm (Step 10 - Existing date: add TOSSED = 10) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 282.00 Tm (UPDATE_FOOD_INVENTORY\(T, TOSSED, 10, 12826\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 270.40 Tm (z.tossed = 0 + 10 = 10) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 258.80 Tm (UPDATE\(12826\); UPDATE\(12825\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 247.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 235.60 Tm (Final tree:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 224.00 Tm (                    12825 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 212.40 Tm (                   /             \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 200.80 Tm (           12823 \(RED\)        12826 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 189.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 177.60 Tm (Own amounts:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 166.00 Tm (  12823: P=50 E=30 T=10) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 154.40 Tm (  12825: P=40 E=35 T=5) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 142.80 Tm (  12826: P=50 E=30 T=10) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 131.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 119.60 Tm (Subtree values:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 108.00 Tm (  12823: P=50  E=30 T=10 Count=1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 96.40 Tm (  12826: P=50  E=30 T=10 Count=1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 84.80 Tm (  12825: P=140 E=95 T=25 Count=3) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 66.20 Tm (The final tree is balanced and all the stored subtree totals are correct.) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 3891 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 742.00 Tm (5. REPORT\(T, x, d1, d2\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 717.00 Tm (To find the average of a food type x over a date range [d1, d2], compute totals up to and including) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 704.00 Tm (d2 and subtract totals strictly before d1. The difference gives the sum and number of reported dates) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 691.00 Tm (inside the range.) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 673.00 Tm (VALUE\(z,x\) is the daily amount of x stored at z. SUBTREE-SUM\(z,x\) is the previously computed subtree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 660.00 Tm (total for food type x.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 635.00 Tm (PREFIX helper pseudocode) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 614.00 Tm (PREFIX\(T, x, d, inclusive\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 602.40 Tm (    z = T.root) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 590.80 Tm (    total = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 579.20 Tm (    count = 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 567.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 556.00 Tm (    while z != T.nil:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 544.40 Tm (        if z.date < d or) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 532.80 Tm (           \(inclusive and z.date == d\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 521.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 509.60 Tm (            total = total) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 498.00 Tm (                + SUBTREE-SUM\(z.left, x\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 486.40 Tm (                + VALUE\(z, x\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 474.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 463.20 Tm (            count = count) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 451.60 Tm (                + z.left.subtreeCount + 1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 440.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 428.40 Tm (            z = z.right) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 416.80 Tm (        else:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 405.20 Tm (            z = z.left) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 393.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 382.00 Tm (    return \(total, count\)) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 356.40 Tm (REPORT pseudocode) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 335.40 Tm (REPORT\(T, x, d1, d2\):) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 323.80 Tm (    \(sum2, count2\) = PREFIX\(T, x, d2, TRUE\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 312.20 Tm (    \(sum1, count1\) = PREFIX\(T, x, d1, FALSE\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 300.60 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 289.00 Tm (    total = sum2 - sum1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 277.40 Tm (    count = count2 - count1) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 265.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 254.20 Tm (    if count == 0:) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 242.60 Tm (        return 0) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 231.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 219.40 Tm (    return total / count) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 200.80 Tm (Here, returning 0 for an empty date range is our chosen convention. Count means reported dates \(tree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 187.80 Tm (nodes\), including a date on which food type x has value zero.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 158.80 Tm (6. Visual walkthrough of REPORT) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 133.80 Tm (REPORT\(T, PRODUCED, 12824, 12826\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 122.20 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 110.60 Tm (                   12825 \(BLACK\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 99.00 Tm (                  /             \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 87.40 Tm (           12823 \(RED\)      12826 \(RED\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 75.80 Tm (           produced=50      produced=50) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 4017 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 742.00 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 730.40 Tm (           Root \(12825\) produced=40) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 704.80 Tm (Step 1 - PREFIX\(T, PRODUCED, 12826, TRUE\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 683.80 Tm (Start at root 12825. Because 12825 <= 12826, add the whole left subtree \(12823\) and the root itself:) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 670.80 Tm (total = 50 + 40 = 90 and count = 1 + 1 = 2. Then move right to 12826.) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 652.80 Tm (At 12826, equality is included. Add its 50: total = 140, count = 3. Return \(sum2, count2\) = \(140,) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 639.80 Tm (3\).) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 621.80 Tm (               12825) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 610.20 Tm (              /     \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 598.60 Tm (      [12823]       12826) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 587.00 Tm (       add 50         add 50) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 575.40 Tm (             + root's own 40) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 563.80 Tm (        sum2 = 140, count2 = 3) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 538.20 Tm (Step 2 - PREFIX\(T, PRODUCED, 12824, FALSE\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 517.20 Tm (Start at 12825. It is greater than 12824, so go left. At 12823, the date is strictly smaller than) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 504.20 Tm (12824; add produced=50 and count 1. Return \(sum1, count1\) = \(50, 1\).) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 486.20 Tm (               12825) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 474.60 Tm (               /     \\) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 463.00 Tm (          [12823]    12826) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 451.40 Tm (           add 50) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 439.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 428.20 Tm (        sum1 = 50, count1 = 1) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 402.60 Tm (Step 3 - Subtract the prefixes) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 381.60 Tm (total = sum2 - sum1 = 140 - 50 = 90) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 370.00 Tm (count = count2 - count1 =   3 -  1 =  2) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 351.40 Tm (Exactly two reported dates are in [12824, 12826]: dates 12825 and 12826.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 326.40 Tm (Step 4 - Divide by the count) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 305.40 Tm (Average = total / count = 90 / 2 = 45) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 293.80 Tm () Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 282.20 Tm (REPORT\(PRODUCED, 12824, 12826\) RETURNS 45.) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 263.60 Tm (Date 12824 does not count because no report exists for that date. A reported date with produced=0) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 250.60 Tm (would still count.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 221.60 Tm (7. Worst-case time complexity - exam-ready) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 189.60 Tm (UPDATE_FOOD_INVENTORY: O\(log n\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 168.60 Tm (RB-SEARCH takes O\(log n\) because the tree height is O\(log n\). For an existing date, adding q is O\(1\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 155.60 Tm (and UPDATE is applied only to the O\(log n\) ancestors. For a new date, RB-BST-INSERT is O\(log n\),) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 142.60 Tm (ancestor updates are O\(log n\), and RB-INSERT-FIXUP is O\(log n\). Each local UPDATE is O\(1\), including) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 129.60 Tm (updates after a rotation. Overall: O\(log n\) worst case.) Tj ET
+0.2 0.3 0.4 rg BT /F2 10.5 Tf 1 0 0 1 44 104.60 Tm (REPORT: O\(log n\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 83.60 Tm (Each PREFIX follows just one downward path in the RB tree, using saved subtree sums and counts) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 70.60 Tm (without scanning every node. One PREFIX costs O\(log n\). REPORT runs two PREFIX queries and O\(1\)) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 1750 >>
+stream
+0.3 g BT /F1 8 Tf 44 30 Td (Q7 Food Inventory  |  Augmented RB Tree) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 742.00 Tm (arithmetic, so O\(log n\) + O\(log n\) + O\(1\) = O\(log n\) worst case.) Tj ET
+0.11 0.22 0.35 rg BT /F2 13 Tf 1 0 0 1 44 713.00 Tm (8. Quick revision table) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 688.00 Tm (OPERATION            MAIN IDEA                       WORST CASE) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 676.40 Tm (RB-SEARCH             Find the date                  O\(log n\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 664.80 Tm (NEW-NODE              Create a node                 O\(1\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 653.20 Tm (Initialize fields     Set own and subtree totals    O\(1\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 641.60 Tm (RB-BST-INSERT         Insert key by date            O\(log n\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 630.00 Tm (UPDATE\(v\)             Recompute one node            O\(1\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 618.40 Tm (Update ancestor path  Recompute all ancestors       O\(log n\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 606.80 Tm (RB-INSERT-FIXUP       Restore RB properties         O\(log n\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 595.20 Tm (PREFIX                Get prefix sum and count      O\(log n\)) Tj ET
+0 g BT /F3 8.4 Tf 1 0 0 1 44 583.60 Tm (REPORT                Two prefixes and a division   O\(log n\)) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 553.00 Tm (EXAM TAKEAWAY: Store subtree sums for produced, eaten and tossed, plus a count of dates, in an) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 540.00 Tm (augmented Red-Black Tree. That supports both updating the history and calculating the average over a) Tj ET
+0 g BT /F1 9.3 Tf 1 0 0 1 44 527.00 Tm (date range in O\(log n\) worst-case time.) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 20 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000163 00000 n 
+0000000233 00000 n 
+0000000308 00000 n 
+0000000376 00000 n 
+0000004465 00000 n 
+0000004611 00000 n 
+0000008697 00000 n 
+0000008843 00000 n 
+0000012917 00000 n 
+0000013065 00000 n 
+0000017279 00000 n 
+0000017427 00000 n 
+0000021737 00000 n 
+0000021885 00000 n 
+0000025828 00000 n 
+0000025976 00000 n 
+0000030045 00000 n 
+0000030193 00000 n 
+0000031995 00000 n 
+trailer
+<< /Size 22 /Root 1 0 R >>
+startxref
+32143
+%%EOF
